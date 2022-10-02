@@ -75,11 +75,16 @@
 <script>
 import { StatsCard, ChartCard } from "@/components/index";
 import Chartist from 'chartist';
+import axios from 'axios';
 export default {
   components: {
     StatsCard,
     ChartCard
   },
+  mounted: function () {
+           axios.get('http://192.168.0.125:8000/get_modules_count')
+              .then(response => (this.statsCards[0].value = response.data.count))
+           },
   /**
    * Chart data used to render stats, charts. Should be replaced with server data
    */
@@ -88,8 +93,8 @@ export default {
       statsCards: [
         {
           type: "warning",
-          icon: "ti-server",
-          title: "Capacity",
+          icon: "ti-medall",
+          title: "ITEA Modules",
           value: "105GB",
           footerText: "Updated now",
           footerIcon: "ti-reload"
