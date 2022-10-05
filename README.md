@@ -18,6 +18,8 @@ Link to [Documentation](http://vuejs.creative-tim.com/vue-paper-dashboard/docume
 ### install dependencies
 ```
 npm install
+
+npm install node-saas
 ```
 ### serve with hot reload at localhost:8080
 ```
