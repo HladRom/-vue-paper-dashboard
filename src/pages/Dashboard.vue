@@ -82,7 +82,7 @@ export default {
     ChartCard
   },
   mounted: function () {
-           axios.get('http://192.168.0.125:8000/get_modules_count')
+           axios.get('http://dummy-backend:8000/get_modules_count')
               .then(response => (this.statsCards[0].value = response.data.count))
            },
   /**
